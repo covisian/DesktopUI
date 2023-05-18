@@ -16,6 +16,11 @@ ifeq ($(ZT_OFFICIAL_RELEASE),1)
 	CODESIGN_APP_CERT="Developer ID Application: ZeroTier, Inc (8ZD9JUCZ4V)"
 	CARGO_FLAGS=--release
 	CARGO_TARGET_DIR=release
+else ifeq ($(ZT_COVISIAN_RELEASE),1)
+	CODESIGN=codesign
+	CODESIGN_APP_CERT="Developer ID Application: COVISIAN SPA (XYH8CWQUB3)"
+	CARGO_FLAGS=--release
+	CARGO_TARGET_DIR=release
 else
 	CARGO_FLAGS=
 	CARGO_TARGET_DIR=debug
