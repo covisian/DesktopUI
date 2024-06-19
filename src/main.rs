@@ -92,9 +92,6 @@ extern "C" {
 extern "C" {
     pub fn c_set_this_thread_to_background_priority();
     pub fn c_set_this_thread_to_foreground_priority();
-}
-
-extern "C" {
     pub fn c_lock_down_file(path: *const c_char, is_dir: c_int);
 }
 
@@ -525,7 +522,7 @@ fn tray_main() {
                     });
                     let (nwid, client2) = ((*network).0.clone(), client.clone());
                     network_menu.push(TrayMenuItem::Text {
-                        text: format!("Allow Default Router Override"),
+                        text: format!("Allow Default Route Override"),
                         checked: allow_default,
                         disabled: false,
                         handler: Some(Box::new(move || {
